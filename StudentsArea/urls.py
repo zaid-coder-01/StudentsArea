@@ -24,4 +24,5 @@ urlpatterns = [
     path('resume/',views.resume),
     path('guide/',views.career,name='save'),
     path('login/', views.login),
+    path('maths/', views.math),
 ]

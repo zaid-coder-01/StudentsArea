@@ -16,7 +16,7 @@
 </head>
 <body style="background-color:rgb(240, 240, 240);">
 
-<div class="resimg" style="">
+<div class="resimg">
     <!--navbar-->
     <nav class="navbar  fixed-top navbar-expand-lg navbar-light nab1"
          style="background-color:rgba(0,0,0,0);box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19);">
@@ -28,9 +28,15 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link nab" href="#" onclick="window.print();">Download</a>
-                </li>
+                    <form>
+                        <div class="srbox">
+                            <input type="text" class="srchbox mt-2">
+                            <button class="srch mt-2"><i class="fa fa-search" aria-hidden="true"></i></button>
 
+                        </div>
+
+                    </form>
+                </li>
                 <li class="nav-item active">
                     <a class="nav-link nab" href="/resume">RESUME <span class="sr-only">(current)</span></a>
                 </li>
@@ -56,90 +62,6 @@
     </nav>
 </div>
 
-<div class="resume1" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) inset, 0 6px 10px 0 rgba(0, 0, 0, 0.19) inset;">
-    <div class="row prt">
-        <div class="col-md-4 ">
-            <div class="prof mt-5  text-center">
-                <img src="{% static 'pro.jpg' %}" class="proimg">
-            </div>
-
-            <div class="contact mt-4 pl-4 mb-4">
-                <h5><u style="">CONTACT</u></h5>
-                <i class="fa fa-envelope" aria-hidden="true">&nbsp shahtahir717@gmail.com</i>
-                <i class="fa fa-phone" aria-hidden="true">&nbsp;&nbsp;&nbsp;918530802282</i>
-                <i class="fa fa-github" aria-hidden="true">&nbsp; zaidcoder01@gmail.com</i>
-                <i class="fa fa-linkedin" aria-hidden="true">&nbsp; zaidcoder01@gmail.com</i>
-                <i class="fa fa-map-marker" aria-hidden="true">&nbsp;&nbsp; N.N arcade opp stand vetal pada bhiwandi</i>
-            </div>
-
-            <div class="education pl-4 mb-4">
-                <h5><u>EDUCATION</u></h5>
-                <li>READING</li>
-                <li>LEARNING</li>
-            </div>
-
-            <div class="skills pl-4 mb-4">
-                <h5><u>SKILLS</u></h5>
-                <li>Github</li>
-                <li>Github</li>
-                <li>Github</li>
-                <li>Github</li>
-                <li>Github</li>
-            </div>
-
-            <div class="language pl-4 mb-4">
-                <h5><u>LANGUAGE</u></h5>
-                <li>JAVA</li>
-                <li>PYTHON</li>
-                <li>PHP</li>
-            </div>
-            <div class="hobbies pl-4">
-                <h5><u>HOBBIES</u></h5>
-                <li>READING</li>
-                <li>LEARNING</li>
-            </div>
-
-
-        </div>
-
-
-        <div class="col-md-7 ml-4">
-            <div class="hname text-center">
-                <h3 class="mb-4">shah MOHD zaid rafiuddin</h3>
-            </div>
-            <div class="summary pl-3">
-                <h5>
-                    <li><u>SUMMARY</u></li>
-                </h5>
-                <div style="border-left:0.1rem solid black;" class="pl-3 sum">
-                    <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                </div>
-            </div>
-            <div class="experience pl-3">
-                <h5>
-                    <li><u>EXPERIENCE</u></li>
-                </h5>
-                <div style="border-left:0.1rem solid black;" class="pl-3 exp">
-                    <p></p>
-                </div>
-            </div>
-
-            <div class="project pl-3">
-                <h5>
-                    <li><u>PROJECT</u></li>
-                </h5>
-                <div style="border-left:0.1rem solid black;" class="pl-3 proj">
-                    <p></p>
-                </div>
-            </div>
-
-        </div>
-
-
-    </div>
-
-</div>
-<br>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -151,15 +73,7 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
-<script>
-<!--var obj = JSON.parse(sessionStorage.user);-->
-<!--document.getElementById('hh1').innerHTML=obj.skl;-->
 
-
-
-
-
-</script>
 
 
 </body>
