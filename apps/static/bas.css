@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+html{
+height:100vh;
+}
+
+:root{
+--pagesize:60rem;
+--pagewidth:55rem;
+}
+body{
+overflow-x:hidden;
+height:100vh;
+}
+.head{
+background-image:url("bac.jpg");
+width:100vw;
+height:60vh;
+}
+.a{
+font-family: 'Lobster', cursive;
+font-size:2rem;
+position:relative;
+}
+.a::before{
+content:" StudentsArea ";
+font-family: 'Lobster', cursive;
+font-size:2rem;
+width: 100%;
+position: absolute;
+color:green;
+top:0.1;
+left:0;
+border-right:0.2rem solid green;
+animation: sl 2s linear infinite;
+overflow:hidden;
+}
+
+li .nab{
+font-size:1.2rem;
+color:black;
+transition: all linear 0.5s;
+}
+li .nab:hover{
+font-size:1.3rem;
+color:green;
+}
+
+
+
+@keyframes sl{
+0% {
+width: 0;
+}
+50% {
+width: 100%;
+}
+100% {
+width: 0;
+}
+
+}
+
+.hcont{
+display: grid;
+justify-content:center;
+}
+.btn-cont{
+margin-left:39%;
+}
+.btnsg{
+font-size:1.2rem;
+color:black;
+background:rgba(255,0,0,0.4);
+border:2px solid black;
+margin-right:2rem;
+width:8rem;
+box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19);
+}
+.btnlg{
+font-size:1.2rem;
+color:black;
+border:2px solid black;
+width:8rem;
+box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19);
+}
+.facts{
+margin-top:4rem;
+display: grid;
+justify-content:center;
+font-family: 'Lobster', cursive;
+}
+.fctimg{
+border-radius:50%;
+width:4rem;
+height:4rem;
+margin:auto;
+margin-top:0.8rem;
+}
+.card-body{
+font-family: 'STIX Two Text', serif;
+}
+.card{
+border:none;
+
+}
+.resimg
+{
+background-image:url("bac.jpg");
+background-size:cover;
+background-repeat:no-repeat;
+width:100vw;
+
+}
+.na{
+background-color:rgb(240, 240, 240);
+border:0.1rem solid black;
+margin-top:4.5rem;
+}
+.cad{
+margin-top:10rem;
+}
+.nab1{
+background-image:url("bac.jpg");
+background-size:cover;
+background-repeat:no-repeat;
+}
+
+
+
+.form-control{
+border:none;
+border-bottom:0.1rem solid black;
+background-color:rgba(0,0,0,0);
+}
+label{
+padding-top:1rem;
+}
+.btn-success{
+width:10rem;
+float:right;
+}
+
+.fa-plus:hover{
+color:blue;
+font-size:1.1rem;
+cursor:pointer;
+}
+.step{
+border-radius:50%;
+width:4rem;
+height:4rem;
+background-color:rgba(0,255,0,0.2);
+font-size:2rem;
+border:0.1rem solid black;
+}
+.stepmain{
+display:flex;
+justify-content:space-around;
+
+}
+
+.srchbox{
+border-radius:2rem;
+padding:0.2rem;
+font-size:1rem;
+position:relative;
+width:0;
+background-color: rgba(0,0,0 ,0);
+border:none;
+transition: all linear 0.5s;
+padding-left:0.6rem;
+}
+.srch{
+border-radius:50%;
+padding:auto;
+background-color:rgba(0,0,0,0);
+color:blue;
+border:0.1rem solid blue;
+position:absolute;
+margin-left:-2rem;
+margin-top:0.3rem;
+}
+.srchbox:focus{
+outline:none;
+}
+
+.srbox:hover >.srchbox{
+transition: all linear 0.5s;
+width:15rem;
+border:0.1rem solid blue;
+background-color:white;
+}
+.srchbox:active{
+width:15rem;
+}
+
+.skhgt{
+margin-top:5.5rem;
+}
+.resume1{
+width:800px;
+height:1000px;
+background-color:white;
+margin-top:7rem;
+margin-left:15rem;
+margin-bottom:6rem;
+}
+
+.proimg{
+width:8rem;
+height:8rem;
+border-radius:50%;
+}
+.contact{
+font-size:1rem;
+float:left;
+}
+.skills{
+font-size:1rem;
+margin-top:3rem;
+}
+.hname{
+margin-top:6rem;
+text-transform: uppercase;
+border-bottom:0.1rem solid black;
+}
+.summary{
+margin-top:2.5rem;
+}
+.sum{
+height:8rem;
+}
+.experience{
+margin-top:2rem;
+}
+.exp{
+height:15rem;
+}
+.project{
+margin-top:1.3rem;
+}
+.proj{
+height:12rem;
+}
+
+@media print{
+
+body *{
+visibility:hidden;
+}
+.prt *{
+visibility:visible;
+}
+}
+

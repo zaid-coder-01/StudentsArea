@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'bas.css' %}?{% now 'U' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>StudentsArea</title>
+</head>
+<body style="background-color:rgb(240, 240, 240);">
+
+<div class="resimg">
+    <!--navbar-->
+    <nav class="navbar  fixed-top navbar-expand-lg navbar-light nab1" style="background-color:rgba(0,0,0,0);box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19);">
+        <a class="navbar-brand a" href="/" style="color:gray">StudentsArea</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link nab" href="/resume">RESUME <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nab" href="/guide">GUIDE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nab" href="/login">LOGIN</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle nab" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Dropdown link
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<!--content-->
+<div class="container-fluid mt-5" style="">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="stepmain" style="">
+                <!--                step 1-->
+                <div class="mt-5 step text-center" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) , 0 10px 20px 0 rgba(0, 0, 0, 0.19)">
+                    <h1 class="mt-2">1</h1>
+                    <h6>Enter Details</h6>
+                </div>
+
+                <!--                step2-->
+                <div class="mt-5 step text-center" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) , 0 10px 20px 0 rgba(0, 0, 0, 0.19)">
+                    <h1 class="mt-2">2</h1>
+                    <h6>Choose Template</h6>
+                </div>
+
+                <!--                step 3-->
+                <div class="mt-5 step text-center" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) , 0 10px 20px 0 rgba(0, 0, 0, 0.19)">
+                    <h1 class="mt-2">3</h1>
+                    <h6>Print Resume</h6>
+                </div>
+            </div>
+<!--            <form class="mt-5">-->
+            <div class="container-fluid ml-2" style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19)">
+                <h3 class="pt-3 mt-5">Personal Details</h3>
+                <div class="row mt-3" style="">
+                    <div class="col-md-6" style="">
+
+                        <label>Name</label>
+                        <input type="text" placeholder="Enter Name" class="form-control" id="name">
+                        <label>D.O.B</label>
+                        <input type="date" placeholder="Enter D.O.B" class="form-control" id="dob">
+
+
+                        <label>Linkedin</label>
+                        <input type="text" placeholder="Enter Linkedin&nbsp;&nbsp;(Optional)" class="form-control" id="linkedin">
+
+
+                        <label>Mobile</label>
+                        <input type="number" placeholder="Enter Mobile" class="form-control" maxlength="11" id="mobile">
+                        <h3 class="pt-5">Skills</h3>
+
+                        <div id="skill">
+                            <input type="text" placeholder="Enter skill" class="form-control skillvalue">
+                            <i class="fa fa-plus" aria-hidden="true" id="addskil" onclick="adskil()">&nbsp;Add mor
+                                fields</i>
+                        </div>
+
+
+
+                    </div>
+                    <div class="col-md-6">
+                        <label>Gender</label>
+                        <select type="number" placeholder="Enter Gender" class="form-control" maxlength="11" id="gender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+
+                        <label>Email</label>
+                        <input type="email" placeholder="Enter Email" class="form-control" id="email">
+
+                        <label>Github</label><br>
+                        <input type="text" placeholder="Enter Github&nbsp;&nbsp;((Optional)" class="form-control" id="github">
+
+
+                        <label>Address</label><br>
+                        <input type="text" placeholder="Enter Address" class="form-control" id="address">
+
+                       <div id="sklrgt">
+
+                       </div>
+                    </div>
+                </div>
+<!--                experience-->
+                <div class="row">
+                    <div class="col-md-6">
+                         <h3 class="pt-5">Experience</h3>
+                         <div id="exp">
+                            <input type="text" placeholder="Enter Experience" class="form-control expvalue">
+                            <i class="fa fa-plus" aria-hidden="true" id="addexp" onclick="addex()">&nbsp;Add mor
+                                fields</i>
+                        </div>
+                    </div>
+                    <div class="col-md-6" id="exprgt">
+
+                    </div>
+                </div>
+
+<!--                projects-->
+                 <div class="row">
+                    <div class="col-md-6">
+                         <h3 class="pt-5">Project</h3>
+                         <div id="prj">
+                            <input type="text" placeholder="Enter project" class="form-control projectvalue">
+                            <i class="fa fa-plus" aria-hidden="true" id="addprj" onclick="adprj()">&nbsp;Add mor
+                                fields</i>
+                        </div>
+                    </div>
+                    <div class="col-md-6" id="prjrgt">
+
+                    </div>
+                </div>
+
+<!--                education-->
+
+                 <div class="row">
+                    <div class="col-md-6">
+                         <h3 class="pt-5">Education</h3>
+                         <div id="educ">
+                            <input type="text" placeholder="Enter educations" class="form-control educationvalue">
+                            <i class="fa fa-plus" aria-hidden="true" id="addeduc" onclick="adeduc()">&nbsp;Add mor
+                                fields</i>
+                        </div>
+                    </div>
+                    <div class="col-md-6" id="educrgt">
+
+                    </div>
+                </div>
+                 <br>
+                <div class="text-center">
+                    <button class="btn btn-success  mt-3 mb-5" id="submit" style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19) inset;">Next</button>
+                </div>
+</div>
+<!--            </form>-->
+        </div>
+    </div>
+
+</div>
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<!--<footer>-->
+<!--  <p> StudentsArea All Rights Reserved</p>-->
+<!--</footer>-->
+<script>
+var expcount=0;
+var skcount=0;
+var educount=0;
+var prjcount=0;
+var expcontainer=document.getElementById('exp');
+var addexpbtn=document.getElementById('addexp');
+var skillcontainer=document.getElementById('skill');
+var addskillbtn=document.getElementById('addskil');
+var prjcontainer=document.getElementById('prj');
+var addprjbtn=document.getElementById('addprj');
+var educcontainer=document.getElementById('educ');
+var addeducbtn=document.getElementById('addeduc');
+
+
+
+
+
+var ea=0;
+function addex()
+{
+if(expcount%2==0){
+let node=document.createElement('input');
+node.classList.add('form-control');
+node.classList.add('expvalue');
+node.setAttribute('placeholder'," enter experience");
+if(ea==0)
+{
+node.classList.add('skhgt');
+ea=ea+1;
+}
+else{
+node.classList.add('mt-3');
+}
+
+document.getElementById('exprgt').appendChild(node);
+expcount=expcount+1;
+console.log(expcount);
+}
+else{
+let node=document.createElement('input');
+node.classList.add('form-control');
+node.classList.add('mt-3');
+node.classList.add('expvalue');
+node.setAttribute('placeholder', "enter experience");
+expcontainer.insertBefore(node,addexpbtn);
+expcount=expcount+1;
+console.log(expcount);
+}
+
+}
+<!--skills-->
+var a=0;
+function adskil()
+{
+
+if(skcount%2==0){
+let sklnode=document.createElement('input');
+sklnode.classList.add('form-control');
+sklnode.classList.add('skillvalue');
+sklnode.setAttribute('placeholder', "enter skills");
+
+if(a==0)
+{
+sklnode.classList.add('skhgt');
+a=a+1;
+}
+else{
+sklnode.classList.add('mt-3');
+}
+
+document.getElementById('sklrgt').appendChild(sklnode);
+skcount=skcount+1;
+}
+else{
+let sklnode=document.createElement('input');
+sklnode.classList.add('form-control');
+sklnode.classList.add('skillvalue');
+sklnode.classList.add('mt-3');
+sklnode.setAttribute('placeholder', "enter skills");
+skillcontainer.insertBefore(sklnode,addskillbtn);
+skcount=skcount+1;
+
+}
+
+}
+
+<!--project-->
+
+var pa=0;
+function adprj()
+{
+
+if(prjcount%2==0){
+let prjnode=document.createElement('input');
+prjnode.classList.add('form-control');
+prjnode.classList.add('projectvalue');
+prjnode.setAttribute('placeholder', "enter project");
+
+if(pa==0)
+{
+prjnode.classList.add('skhgt');
+pa=pa+1;
+}
+else{
+prjnode.classList.add('mt-3');
+}
+
+document.getElementById('prjrgt').appendChild(prjnode);
+prjcount=prjcount+1;
+}
+else{
+let prjnode=document.createElement('input');
+prjnode.classList.add('form-control');
+prjnode.classList.add('projectvalue');
+prjnode.classList.add('mt-3');
+prjnode.setAttribute('placeholder', "enter project");
+prjcontainer.insertBefore(prjnode,addprjbtn);
+prjcount=prjcount+1;
+
+}
+
+}
+<!--education-->
+
+var eda=0;
+function adeduc()
+{
+
+if(educount%2==0){
+let educnode=document.createElement('input');
+educnode.classList.add('form-control');
+educnode.classList.add('educationvalue');
+educnode
+educnode.setAttribute('placeholder', "enter education");
+
+if(eda==0)
+{
+educnode.classList.add('skhgt');
+eda=eda+1;
+}
+else{
+educnode.classList.add('mt-3');
+}
+
+document.getElementById('educrgt').appendChild(educnode);
+educount=educount+1;
+}
+else{
+let educnode=document.createElement('input');
+educnode.classList.add('form-control');
+educnode.classList.add('educationvalue');
+educnode.classList.add('mt-3');
+educnode.setAttribute('placeholder', "enter Educations");
+educcontainer.insertBefore(educnode,addeducbtn);
+educount=educount+1;
+
+}
+
+}
+
+$(document).ready(function(){
+
+$('#submit').click(function(){
+var name=document.getElementById("name").value;
+var dob=document.getElementById('dob').value;
+var email=document.getElementById('email').value;
+var gender=document.getElementById('gender').value;
+var github=document.getElementById('github').value;
+var linkedin=document.getElementById('linkedin').value;
+var address=document.getElementById('address').value;
+var mobile=document.getElementById('mobile').value;
+var projectvalue=document.getElementsByClassName('projectvalue');
+var expvalue=document.getElementsByClassName('expvalue');
+var educationvalue=document.getElementsByClassName('educationvalue');
+var skillvalue=document.getElementsByClassName('skillvalue');
+
+
+var expval="";
+var prjval="";
+var eduval="";
+var sklval="";
+for(let s of expvalue )
+{
+expval=expval + `<li> ${s.value} </li>`;
+
+}
+for(let s of skillvalue )
+{
+sklval=sklval + `<li> ${s.value} </li>`;
+
+}
+for(let s of projectvalue )
+{
+prjval=prjval + `<li> ${s.value} </li>`;
+
+}
+for(let s of educationvalue )
+{
+eduval=eduval + `<li> ${s.value} </li>`;
+
+}
+
+let details={
+name:name,
+dob:dob,
+email:email,
+gender:gender,
+git:github,
+linked:linkedin,
+add:address,
+mob:mobile,
+exp:expval,
+prj:prjval,
+edu:eduval,
+skl:sklval,
+};
+
+sessionStorage.setItem('user', JSON.stringify(details));
+
+
+});
+
+
+});
+
+</script>
+
+</body>
+</html>

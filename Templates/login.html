@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'log.css' %}?{% now 'U' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>StudentsArea</title>
+</head>
+<body style="background-color:rgb(240, 240, 240);">
+
+<div class="resimg">
+    <!--navbar-->
+    <nav class="navbar  fixed-top navbar-expand-lg navbar-light nab1" style="background-color:rgba(0,0,0,0);box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19)">
+        <a class="navbar-brand a" href="/" style="color:gray">StudentsArea</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item active">
+                    <a class="nav-link nab" href="/resume">RESUME <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nab" href="#">GUIDE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nab" href="/login">LOGIN</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle nab" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        Dropdown link
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+</div>
+
+<div class="container log">
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            <div class="card" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                <div class="card-body" style="background-color:rgba(230,230,230,0.3)">
+                    <div style="display:flex; justify-content:center;">
+                   <h4 class="" id="lg">LOGIN</h4>
+                    <h4 class="pl-4" id="sg">SIGN UP</h4>
+                    </div>
+                    <div class="mt-4" id="login">
+                        <form>
+                            <label>UserId</label>
+                            <input type="text" class="form-control" placeholder="UserId" style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19) inset;">
+                            <br>
+                            <label>Password</label>
+                            <input type="password" class="form-control" placeholder="Password" style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19) inset;">
+                        <br>
+                            <button type="submit" class="btn btn-success form-control" style="font-size:1.2rem; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19) inset;">LOGIN</button>
+                        </form>
+
+                        <div class="card-footer text-center" style="background-color:rgba(0,0,0,0);">
+                            <a href="#">Forget Password ?</a>
+                        </div>
+                    </div>
+
+                    <div class="mt-4" id="reg">
+                        <form>
+                            <label>Name</label>
+                            <input type="text" class="form-control" placeholder="Name" style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19) inset;">
+                            <br>
+                             <label>Class</label>
+                            <select class="form-control" style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19) inset;">
+                                <option value="ssc">SSC</option>
+                                <option value="hsc">HSC</option>
+                                <option value="Engineering 1">Engineering (1)</option>
+                                <option value="Engineering 2">Engineering (2)</option>
+                                <option value="Engineering 3">Engineering (3)</option>
+                                <option value="Engineering 4">Engineering (4)</option>
+                            </select>
+                            <br>
+                            <label>User Id</label>
+                            <input type="text" class="form-control" placeholder="Userid" style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19) inset;">
+                            <br>
+                            <label>Password</label>
+                            <input type="password" class="form-control" placeholder="Password" style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19) inset;">
+                            <br>
+
+                            <button type="submit" class="btn btn-success form-control" style="font-size:1.2rem;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19) inset;">SIGN UP</button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+
+<script>
+    $(document).ready(function(){
+       $('#reg').hide();
+       $('#lg').css("text-decoration","underline");
+
+    $('#lg').click(function(){
+    $('#sg').css("text-decoration","none");
+    $(this).css("text-decoration","underline");
+     $('#reg').hide();
+     $('#login').show();
+    });
+     $('#sg').click(function(){
+       $('#lg').css("text-decoration","none");
+      $(this).css("text-decoration","underline");
+     $('#reg').show();
+     $('#login').hide();
+    });
+
+    });
+</script>
+
+</body>
+</html>

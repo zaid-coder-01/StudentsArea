@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+html{
+height:100vh;
+}
+
+body{
+overflow-x:hidden;
+height:100vh;
+}
+.head{
+background-image:url("bac.jpg");
+width:100vw;
+height:60vh;
+}
+.a{
+font-family: 'Lobster', cursive;
+font-size:2rem;
+position:relative;
+}
+.a::before{
+content:" StudentsArea ";
+font-family: 'Lobster', cursive;
+font-size:2rem;
+width: 100%;
+position: absolute;
+color:green;
+top:0.1;
+left:0;
+border-right:0.2rem solid green;
+animation: sl 2s linear infinite;
+overflow:hidden;
+}
+
+li .nab{
+font-size:1.2rem;
+color:black;
+transition: all linear 0.5s;
+}
+li .nab:hover{
+font-size:1.3rem;
+color:green;
+}
+
+.nab1{
+background-image:url("bac.jpg");
+background-size:cover;
+background-repeat:no-repeat;
+}
+
+
+@keyframes sl{
+0% {
+width: 0;
+}
+50% {
+width: 100%;
+}
+100% {
+width: 0;
+}
+
+}
+.log{
+margin-top:7rem;
+}
+
+#lg:hover{
+transition: all linear 0.9s;
+font-size:1.7rem;
+color:blue;
+cursor:pointer;
+}
+#sg:hover{
+transition: all linear 0.9s;
+font-size:1.7rem;
+color:blue;
+cursor:pointer;
+
+}
+#sg{
+font-family:algerian;
+}
+#lg{
+font-family:algerian;
+}
