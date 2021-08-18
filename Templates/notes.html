@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+ {% load static %}
+{% block cs %}
+  <link rel="stylesheet" href="{% static 'log.css' %}?{% now 'U' %}">
+{% endblock %}
+
+{% block cont %}
+<div class="notebtn">
+    <a href="#" class="btn btn-light"><i class="fa fa-plus">&nbsp;&nbsp;Add Notes</i></a>
+</div>
+{% endblock %}

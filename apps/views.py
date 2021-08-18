@@ -24,3 +24,15 @@ def login(request):
 
 def math(request):
     return render(request, "maths.html")
+
+
+def studentpage(request):
+    return render(request, "studentPage.html")
+
+
+def note(request):
+    return render(request, "notes.html")
+
+
+def document(request):
+    return render(request, "document.html")

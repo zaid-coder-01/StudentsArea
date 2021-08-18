@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="{% static 'bas.css' %}?{% now 'U' %}">
+   {% block cs %} <link rel="stylesheet" href="{% static 'bas.css' %}?{% now 'U' %}">{% endblock %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>StudentsArea</title>
 </head>
@@ -20,31 +20,25 @@
     <!--navbar-->
     <nav class="navbar  fixed-top navbar-expand-lg navbar-light nab1"
          style="background-color:rgba(0,0,0,0);box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19);">
-        <a class="navbar-brand a" href="/" style="color:gray">StudentsArea</a>
+        <a class="navbar-brand a" href="/studentPage" style="color:gray">StudentsArea</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <form>
-                        <div class="srbox">
-                            <input type="text" class="srchbox mt-2">
-                            <button class="srch mt-2"><i class="fa fa-search" aria-hidden="true"></i></button>
 
-                        </div>
-
-                    </form>
-                </li>
                 <li class="nav-item active">
-                    <a class="nav-link nab" href="/resume">RESUME <span class="sr-only">(current)</span></a>
+                    <a class="nav-link nab" href="/notes">Notes <span class="sr-only">(current)</span></a>
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link nab" href="#">Books</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nab" href="#">GUIDE</a>
+                    <a class="nav-link nab" href="/maths">MathsProblem</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nab" href="/login">LOGIN</a>
+                    <a class="nav-link nab" href="/document">Document</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle nab" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
@@ -61,6 +55,10 @@
         </div>
     </nav>
 </div>
+
+{% block cont%}
+
+{% endblock %}
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

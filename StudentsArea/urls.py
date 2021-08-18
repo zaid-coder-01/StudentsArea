@@ -25,4 +25,7 @@ urlpatterns = [
     path('guide/',views.career,name='save'),
     path('login/', views.login),
     path('maths/', views.math),
+    path('studentPage/', views.studentpage),
+    path('notes/', views.note),
+    path('document/', views.document),
 ]
