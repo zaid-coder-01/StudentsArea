@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="{% static 'bas.css' %}?{% now 'U' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="{% static 'za.png' %}"/>
     <title>StudentsArea</title>
 </head>
 <body style="background-color:rgb(240, 240, 240);">
@@ -31,7 +32,7 @@
                     <a class="nav-link nab" href="/resume">RESUME <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nab" href="/guide">GUIDE</a>
+                    <a class="nav-link nab" href="/cheatsheet">GUIDE</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nab" href="/login">LOGIN</a>
@@ -78,7 +79,7 @@
                 </div>
             </div>
             <!--            <form class="mt-5">-->
-            <div class="container-fluid ml-2"
+            <div class="container-fluid ml-1"
                  style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19)">
                 <h3 class="pt-3 mt-5">Personal Details</h3>
                 <div class="row mt-3" style="">
@@ -179,10 +180,10 @@
                 </div>
                 <br>
                 <div class="text-center">
-                    <button class="btn btn-success  mt-3 mb-5" id="submit"
+                    <a href="{% url 'tempdesign' %}" class="btn btn-success  mt-3 mb-5" id="submit"
                             style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19) inset;">
                         Next
-                    </button>
+                    </a>
                 </div>
             </div>
             <!--            </form>-->
@@ -428,7 +429,6 @@ skl:sklval,
 };
 
 sessionStorage.setItem('user', JSON.stringify(details));
-
 
 });
 

@@ -12,6 +12,8 @@
 
     <link rel="stylesheet" href="{% static 'bas.css' %}?{% now 'U' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="{% static 'pri.css' %}" type="text/css" media="print" />
+  <link rel="icon" type="image/png" href="{% static 'za.png' %}"/>
     <title>StudentsArea</title>
 </head>
 <body style="background-color:rgb(240, 240, 240);">
@@ -28,14 +30,14 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link nab" href="#" onclick="window.print();">Download</a>
+                    <a class="nav-link nab" href="#" onclick="pr()">Download</a>
                 </li>
 
                 <li class="nav-item active">
                     <a class="nav-link nab" href="/resume">RESUME <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nab" href="#">GUIDE</a>
+                    <a class="nav-link nab" href="/cheatsheet">GUIDE</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nab" href="/login">LOGIN</a>
@@ -56,42 +58,42 @@
     </nav>
 </div>
 
-<div class="resume1" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) inset, 0 6px 10px 0 rgba(0, 0, 0, 0.19) inset;">
-    <div class="row prt">
-        <div class="col-md-4 ">
+<div class="resume1" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) inset, 0 6px 10px 0 rgba(0, 0, 0, 0.19) inset;" id="rs1">
+    <div class="row " id="prt">
+        <div class="col-md-4 dd" >
             <div class="prof mt-5  text-center">
                 <img src="{% static 'pro.jpg' %}" class="proimg">
             </div>
 
             <div class="contact mt-4 pl-4 mb-4">
                 <h5><u style="">CONTACT</u></h5>
-                <i class="fa fa-envelope" aria-hidden="true">&nbsp shahtahir717@gmail.com</i>
-                <i class="fa fa-phone" aria-hidden="true">&nbsp;&nbsp;&nbsp;918530802282</i>
-                <i class="fa fa-github" aria-hidden="true">&nbsp; zaidcoder01@gmail.com</i>
-                <i class="fa fa-linkedin" aria-hidden="true">&nbsp; zaidcoder01@gmail.com</i>
-                <i class="fa fa-map-marker" aria-hidden="true">&nbsp;&nbsp; N.N arcade opp stand vetal pada bhiwandi</i>
+                <i class="fa fa-envelope" aria-hidden="true" id="email"></i>
+                <i class="fa fa-phone" aria-hidden="true" id="mob"></i>
+                <i class="fa fa-github" aria-hidden="true" id="git"></i>
+                <i class="fa fa-linkedin" aria-hidden="true" id="link"></i>
+                <i class="fa fa-map-marker" aria-hidden="true" id="add"></i>
             </div>
 
             <div class="education pl-4 mb-4">
                 <h5><u>EDUCATION</u></h5>
-                <li>READING</li>
-                <li>LEARNING</li>
-            </div>
+              <div id="edu">
 
+              </div>
+            </div>
             <div class="skills pl-4 mb-4">
                 <h5><u>SKILLS</u></h5>
-                <li>Github</li>
-                <li>Github</li>
-                <li>Github</li>
-                <li>Github</li>
-                <li>Github</li>
+                <li>Machine Learning</li>
+                <li>Hibernate</li>
+                <li>SQL</li>
+                <li>Django</li>
+                <li>Git&Github</li>
             </div>
 
             <div class="language pl-4 mb-4">
                 <h5><u>LANGUAGE</u></h5>
-                <li>JAVA</li>
-                <li>PYTHON</li>
-                <li>PHP</li>
+             <div id="lang">
+
+             </div>
             </div>
             <div class="hobbies pl-4">
                 <h5><u>HOBBIES</u></h5>
@@ -105,14 +107,14 @@
 
         <div class="col-md-7 ml-4">
             <div class="hname text-center">
-                <h3 class="mb-4">shah MOHD zaid rafiuddin</h3>
+                <h3 class="mb-4" id="name"></h3>
             </div>
             <div class="summary pl-3">
                 <h5>
                     <li><u>SUMMARY</u></li>
                 </h5>
                 <div style="border-left:0.1rem solid black;" class="pl-3 sum">
-                    <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quam facere deleniti at dolores ipsum mollitia! Adipisci voluptatibus quam perferendis laborum unde, nisi velit? Soluta sapiente </p>
                 </div>
             </div>
             <div class="experience pl-3">
@@ -120,7 +122,9 @@
                     <li><u>EXPERIENCE</u></li>
                 </h5>
                 <div style="border-left:0.1rem solid black;" class="pl-3 exp">
-                    <p></p>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quam facere deleniti at dolores ipsum mollitia!</li>
+                 <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quam facere deleniti at dolores ipsum mollitia!</li>
+                     <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quam facere deleniti at dolores ipsum mollitia!</li>
                 </div>
             </div>
 
@@ -129,7 +133,9 @@
                     <li><u>PROJECT</u></li>
                 </h5>
                 <div style="border-left:0.1rem solid black;" class="pl-3 proj">
-                    <p></p>
+                           <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quam facere deleniti at dolores ipsum mollitia!</li>
+                 <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quam facere deleniti at dolores ipsum mollitia!</li>
+                     <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quam </li>
                 </div>
             </div>
 
@@ -154,10 +160,29 @@
 <script>
 <!--var obj = JSON.parse(sessionStorage.user);-->
 <!--document.getElementById('hh1').innerHTML=obj.skl;-->
+var user = JSON.parse(sessionStorage.getItem("user"));
+
+document.getElementById('email').innerHTML='&nbsp;&nbsp;'+user.email;
+document.getElementById('mob').innerHTML='&nbsp;&nbsp;'+user.mob;
+document.getElementById('git').innerHTML='&nbsp;&nbsp;'+user.git;
+document.getElementById('link').innerHTML='&nbsp;&nbsp;'+user.linked;
+document.getElementById('add').innerHTML='&nbsp;&nbsp;'+user.add;
+document.getElementById('name').innerHTML=user.name;
+document.getElementById('edu').innerHTML=user.edu;
+document.getElementById('lang').innerHTML=user.skl;
 
 
 
+function pr()
+{
+var d=document.body.innerHTML;
+var f=document.getElementById('rs1').innerHTML;
 
+document.body.innerHTML=f;
+window.print();
+document.body.innerHTML=d;
+
+}
 
 </script>
 

@@ -1,10 +1,213 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% load static %}
+{% block cs %}
+<link rel="stylesheet" href="{% static 'log.css' %}?{% now 'U' %}">
+{% endblock %}
+{% block cont %}
+<div class="container datcon">
+    <div class="graphdet text-center">
+        <form class="form-control">
+            <div class="text-center" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.4);">
+                <h3>GRAPH DETAILS</h3>
+            </div>
+            <br>
+            <select id="typ" onchange="myFunction()">
+                <option value="single">Single</option>
+                <option value="multiple">Multiple</option>
+            </select>
+
+            <input type="number" placeholder="No of Graph" class="ml-5" value="=2">
+            <br>
+            <div id="sing">
+           <input type="text" placeholder="x-axis value" class="" >
+            <input type="text" placeholder="y-axis value" class="ml-5" >
+            </div>
+
+            <div id="mul">
+           <input type="text" placeholder="x-axis value" class="" >
+            <input type="text" placeholder="y-axis value" class="ml-5" >
+            <br>
+            <input type="text" placeholder="x-axis value" class="" >
+            <input type="text" placeholder="y-axis value" class="ml-5" >
+            </div>
+             <br>
+            <div class="" style="">
+                <a class="btn graphbtn" id="crt">Create</a>
+            </div>
+        </form>
+    </div>
+
+</div>
+<div class="container-fluid graph " id="grap">
+    <div class="can text-center">
+        <div class="mt-5" style="display:flex; justify-content:space-around;">
+        <canvas width="600" height="400" style="background-color:white;" id="g1">
+
+        </canvas>
+        <canvas width="600" height="400" style="background-color:white;" class="ml-5" id="g2">
+
+        </canvas>
+            </div>
+        <div class="mt-5" style="display:flex; justify-content:space-around;">
+        <canvas width="600" height="400" style="background-color:white;" id="g3">
+
+        </canvas>
+        <canvas width="600" height="400" style="background-color:white;" class="ml-5" id="g4">
+
+        </canvas>
+            </div>
+        <div class="mt-5" style="display:flex; justify-content:space-around;">
+        <canvas width="600" height="400" style="background-color:white;" id="g5">
+
+        </canvas>
+        <canvas width="600" height="400" style="background-color:white;" class="ml-5" id="g6">
+
+        </canvas>
+            </div>
+    </div>
+</div>
+
+<div class="result container">
+    <h1>ddd</h1>
+</div>
+<br>
+<br>
+{% endblock%}
+
+
+{% block scrip %}
+
+<script>
+$('#grap').hide();
+  $('#sing').show();
+  $('#mul').hide();
+function myFunction()
+{
+ var typ=document.getElementById('typ').value;
+
+$(document).ready(()=>{
+  if(typ=='multiple')
+  {
+  $('#mul').show();
+  $('#sing').hide();
+  }
+  else{
+    $('#sing').show();
+    $('#mul').hide();
+  }
+
+});
+}
+
+function a()
+{
+document.getElementById('grap').style.display="block";
+}
+
+document.getElementById('crt').addEventListener("click",a);
+
+var data = [{
+                x: [12, 19, 3, 5, 2, 3],
+                y: [1,2,3,4,5,6]
+
+         }];
+
+    var chart1=document.getElementById('g1').getContext('2d');
+     var chart2=document.getElementById('g2').getContext('2d');
+
+    var chart3=document.getElementById('g3').getContext('2d');
+     var chart4=document.getElementById('g4').getContext('2d');
+
+    var chart5=document.getElementById('g5').getContext('2d');
+     var chart6=document.getElementById('g6').getContext('2d');
+
+    var g1=new Chart(chart1,{
+      type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+          }]
+          },
+        options: {
+        responsive:false,
+        },
+    });
+ var g2=new Chart(chart2,{
+      type: 'line',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+          }]
+          },
+        options: {
+        responsive:false,
+        },
+    });
+    var g3=new Chart(chart3,{
+      type: 'scatter',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data:data,
+          }]
+          },
+        options: {
+        responsive:false,
+        scales: {
+      x: {
+        type: 'linear',
+        position: 'bottom'
+      }
+    }
+        },
+    });
+    var g4=new Chart(chart4,{
+      type: 'pie',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+          }]
+          },
+        options: {
+        responsive:false,
+        },
+    });
+    var g5=new Chart(chart5,{
+      type: 'radar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+          }]
+          },
+        options: {
+        responsive:false,
+        },
+    });
+    var g6=new Chart(chart6,{
+      type: 'doughnut',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+          }]
+          },
+        options: {
+        responsive:false,
+        },
+    });
+
+
+</script>
+
+{% endblock %}

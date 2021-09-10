@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="{% static 'log.css' %}?{% now 'U' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="{% static 'za.png' %}"/>
     <title>StudentsArea</title>
 </head>
 <body style="background-color:rgb(240, 240, 240);">
@@ -32,7 +33,7 @@
                     <a class="nav-link nab" href="/resume">RESUME <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nab" href="#">GUIDE</a>
+                    <a class="nav-link nab" href="/cheatsheet">GUIDE</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nab" href="/login">LOGIN</a>
@@ -66,11 +67,12 @@
                     <div class="mt-4" id="login">
                         <form>
                             <label>UserId</label>
-                            <input type="text" class="form-control" placeholder="UserId"
+                            <input type="text" class="form-control" placeholder="Enter UserId"
                                    style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19) inset;">
                             <br>
+
                             <label>Password</label>
-                            <input type="password" class="form-control" placeholder="Password"
+                            <input type="password" class="form-control" placeholder="Enter Password"
                                    style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19) inset;">
                             <br>
                             <button type="submit" class="btn btn-success form-control"
@@ -87,16 +89,19 @@
                     <div class="mt-4" id="reg">
                         <form>
                             <label>Name</label>
-                            <input type="text" class="form-control" placeholder="Name"
+                            <input type="text" class="form-control" placeholder="Enter Name"
                                    style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19) inset;">
                             <br>
-
+                            <label>Email</label>
+                            <input type="email" class="form-control" placeholder="Enter Email"
+                                   style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19) inset;">
+                            <br>
                             <label>User Id</label>
-                            <input type="text" class="form-control" placeholder="Userid"
+                            <input type="text" class="form-control" placeholder="Enter Userid"
                                    style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19) inset;">
                             <br>
                             <label>Password</label>
-                            <input type="password" class="form-control" placeholder="Password"
+                            <input type="password" class="form-control" placeholder="Enter Password"
                                    style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19) inset;">
                             <br>
 
@@ -145,6 +150,7 @@
     });
 
     });
+
 
 </script>
 

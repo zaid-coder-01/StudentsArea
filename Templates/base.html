@@ -12,6 +12,7 @@
 
    {% block cs %} <link rel="stylesheet" href="{% static 'bas.css' %}?{% now 'U' %}">{% endblock %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="icon" type="image/png" href="{% static 'za.png' %}"/>
     <title>StudentsArea</title>
 </head>
 <body style="background-color:rgb(240, 240, 240);">
@@ -71,6 +72,11 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
+<script src="{% static 'chart.js' %}"></script>
+
+{% block scrip %}
+
+{% endblock %}
 
 </body>
 </html>

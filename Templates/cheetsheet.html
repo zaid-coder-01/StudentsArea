@@ -12,6 +12,9 @@
 
     <link rel="stylesheet" href="{% static 'bas.css' %}?{% now 'U' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="icon" type="image/png" href="{% static 'za.png' %}"/>
+    <link rel="stylesheet"  href="{% static 'prism.css' %}?{% now 'U' %}"/>
+
     <title>StudentsArea</title>
 </head>
 <body style="background-color:rgb(240, 240, 240);">
@@ -53,8 +56,27 @@
     </nav>
 </div>
 
-{% block content %}
-{% endblock %}
+<div class="sheet-index">
+    <button class="sheet-btn">Java</button>
+     <button class="sheet-btn">Python</button>
+     <button class="sheet-btn">PHP</button>
+     <button class="sheet-btn">Javascript</button>
+     <button class="sheet-btn">SQL</button>
+     <button class="sheet-btn">Jquery</button>
+     <button class="sheet-btn">Node.js</button>
+     <button class="sheet-btn">Hibernate</button>
+     <button class="sheet-btn">CSS</button>
+     <button class="sheet-btn">HTML</button>
+    <button class="sheet-btn">GIT</button>
+</div>
+
+<div class="cheatContainer mt-5  container">
+<pre data-src="myfile.js" data-download-link data-download-link-label="Download this file" style="border:none; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) inset, 0 8px 20px 0 rgba(0, 0, 0, 0.19);"><code class="language-java">class{
+int a=10;
+intb=20;
+}</code>
+</pre>
+</div>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -68,6 +90,6 @@
         crossorigin="anonymous"></script>
 
 
-
+<script src="{% static 'prism.js' %}"></script>
 </body>
 </html>

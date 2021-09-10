@@ -89,6 +89,7 @@ margin-top:2rem;
 height:25rem;
 }
 .mbtn{
+color:black;
 border-radius:2rem;
 background-color:lightskyblue;
 font-size:1.2rem;
@@ -117,6 +118,119 @@ box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2) inset, 0 6px 20px 0 rgba(0, 0, 0, 0.1
 }
 .notebtn{
 margin-top:6rem;
+}
+.s{
+height:100%;
+
+}
+.srhdocbtn{
+border-radius:0 2rem 2rem 0;
+width:10rem;
+margin-top:-0.5rem;
+margin-left:-0.3rem;
+}
+.srhdoc{
+border-radius:2rem 0 0 2rem ;
+width:15rem;
+font-size:1.2rem;
+height:2.8rem;
+padding-left:0.8rem;
+margin-top:0.5rem;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) inset, 0 8px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.tabdet{
+margin-top:9rem;
+}
+
+.datcon{
+margin-top:7rem;
+}
+.graphdet{
+
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) inset, 0 8px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.graphdet input,select{
+padding-left:1rem;
+border-radius:1rem;
+font-weight:bold;
+margin-top:2rem;
+width:30rem;
+font-size:1.3rem;
+box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19);
+}
+.graphbtn{
+margin-top:2rem;
+width:15rem;
+background-color:lightgreen;
+font-size:1.3rem;
+font-weight:bold;
+margin-bottom:1rem;
+}
+.graph{
+margin-top:5rem;
+}
+.can{
+}
+.result{
+margin-top:5rem;
+box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19);
+}
+canvas{
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) inset, 0 8px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.rtem{
+border:0.1rem solid black;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.rtem:hover img{
+transform: scale(1.1);
+}
+.crdimg{
+width:300px;
+height:400px;
+}
+.addcontainer{
+width:80vw;
+height:85vh;
+background-color:white;
+margin-left:20vh;
+border:0.1rem solid black;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)inset, 0 8px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.cls{
+border:0.1rem solid red;
+width:10rem;
+font-size:1.2rem;
+border-radius:2rem;
 float:right;
-margin-right:2rem;
+margin:1rem;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)inset, 0 8px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.cls:hover{
+background-color:rgba(255,0,0,0.5);
+color:white;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)inset, 0 8px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.notcreate{
+border:0.1rem solid green;
+width:10rem;
+font-size:1.2rem;
+border-radius:2rem;
+float:right;
+margin:1rem;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)inset, 0 8px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.notdetail{
+margin-top:5rem;
+}
+.notcreate:hover{
+background-color:rgba(0,255,0,1);
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)inset, 0 8px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.actn i:hover{
+cursor:pointer;
+color:blue;
 }

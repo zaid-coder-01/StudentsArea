@@ -2,7 +2,7 @@ from django.shortcuts import render
 import requests
 
 # Create your views here.
-from apps.models import Facts
+from apps.models import Facts, Document
 
 
 def index(request):
@@ -14,8 +14,8 @@ def resume(request):
     return render(request, "resume.html")
 
 
-def career(request):
-    return render(request, "resumeTemplate.html")
+def cheatsheet(request):
+    return render(request, "cheetsheet.html")
 
 
 def login(request):
@@ -35,4 +35,23 @@ def note(request):
 
 
 def document(request):
-    return render(request, "document.html")
+    if request.method == 'POST':
+        name = request.POST["name"]
+        doc = request.POST["doc"]
+        sa=Document(name=name,document=doc)
+        sa.save()
+
+    doc = Document.objects.all()
+    return render(request, "document.html", {"doc": doc})
+
+
+def datavisu(request):
+    return render(request, "datavisu.html")
+
+
+def tempdesign(request):
+    return render(request, "templatedesign.html")
+
+
+def resumeTemplate(request):
+    return render(request, "resumeTemplate.html")

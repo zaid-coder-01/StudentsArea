@@ -5,7 +5,46 @@
 {% endblock %}
 
 {% block cont %}
-<div class="notebtn">
-    <a href="#" class="btn btn-light"><i class="fa fa-plus">&nbsp;&nbsp;Add Notes</i></a>
+<div class="notebtn text-center">
+    <a href="#" class="btn btn-light" id="adno"><i class="fa fa-plus">&nbsp;&nbsp;Add Notes</i></a>
 </div>
+
+<div class="addcontainer mt-5" id="addcot" style="z-index:1">
+<a class="btn btn-outline-danger cls" id="close">Close</a>
+<br>
+ <div class="notdetail ">
+  <div class="row">
+      <div class="col-md-11 ml-5">
+          <div class="card" style="">
+              <div class="card-body">
+                   <form >
+                       <label style="font-size:1.2rem;">Title</label>
+                  <input type="text" placeholder="enter Title" class="form-control" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 10px 0 rgba(0, 0, 0, 0.19);" >
+                  <label style="font-size:1.2rem;" class="mt-3">Content</label>
+                       <textarea placeholder="Content"  rows="5" class="form-control" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 10px 0 rgba(0, 0, 0, 0.19);"></textarea>
+             <div class="mt-3">
+                 <button type="submit" class="btn notcreate">Create</button>
+             </div>
+              </form>
+              </div>
+             </div>
+          </div>
+      </div>
+  </div>
+ </div>
+</div>
+{% endblock %}
+{% block scrip %}
+<script>
+    $(document).ready(function(){
+    $('#addcot').hide();
+    $( "#adno" ).click(function() {
+    $('#addcot').show(1000);
+    });
+      $( "#close" ).click(function() {
+    $('#addcot').hide(1000);
+    });
+
+    });
+</script>
 {% endblock %}

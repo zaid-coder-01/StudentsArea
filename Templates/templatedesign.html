@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="{% static 'bas.css' %}?{% now 'U' %}">
+    <link rel="stylesheet" href="{% static 'log.css' %}?{% now 'U' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="{% static 'za.png' %}"/>
     <title>StudentsArea</title>
 </head>
 <body style="background-color:rgb(240, 240, 240);">
@@ -27,21 +28,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <form>
-                        <div class="srbox">
-                            <input type="text" class="srchbox mt-2">
-                            <button class="srch mt-2"><i class="fa fa-search" aria-hidden="true"></i></button>
 
-                        </div>
-
-                    </form>
-                </li>
                 <li class="nav-item active">
                     <a class="nav-link nab" href="/resume">RESUME <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nab" href="#">GUIDE</a>
+                    <a class="nav-link nab" href="/cheatsheet">GUIDE</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nab" href="/login">LOGIN</a>
@@ -60,6 +52,33 @@
             </ul>
         </div>
     </nav>
+</div>
+<div class="container-fluid m-5 mt-5">
+    <div class="row">
+        <div class="col-md-12 mt-5">
+            <div class="text-center">
+                <h2 style="text-shadow: 2px 2px 10px rgba(0,0,0,0.5);"><b>Choose Template</b></h2>
+            </div>
+
+            <div class="card-columns mt-5">
+                <div class="card rtem" style="background-color:rgba(0,0,0,0);max-width:300px; max-height:400px;">
+                    <a href="{% url 'resumeTemplate' %}"><img src="{% static 'r5.png' %}" class="crdimg"></a>
+                </div>
+                   <div class="card rtem mt-5" style="background-color:rgba(0,0,0,0);max-width:300px; max-height:400px;">
+                    <img src="{% static 'r1.jpg' %}" class="crdimg">
+                </div>
+                   <div class="card rtem" style="background-color:rgba(0,0,0,0);max-width:300px; max-height:400px;">
+                    <img src="{% static 'r2.jpg' %}" class="crdimg">
+                </div>
+                   <div class="card rtem mt-5" style="background-color:rgba(0,0,0,0);max-width:300px; max-height:400px;">
+                    <img src="{% static 'r1.jpg' %}" class="crdimg">
+                </div>
+                   <div class="card rtem" style="background-color:rgba(0,0,0,0);max-width:300px; max-height:400px;">
+                    <img src="{% static 'r3.jpg' %}" class="crdimg">
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
