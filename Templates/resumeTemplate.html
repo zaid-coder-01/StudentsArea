@@ -1,63 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-    {% load static %}
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="{% static 'bas.css' %}?{% now 'U' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <link rel="stylesheet" href="{% static 'pri.css' %}" type="text/css" media="print" />
-  <link rel="icon" type="image/png" href="{% static 'za.png' %}"/>
-    <title>StudentsArea</title>
-</head>
-<body style="background-color:rgb(240, 240, 240);">
-
-<div class="resimg" style="">
-    <!--navbar-->
-    <nav class="navbar  fixed-top navbar-expand-lg navbar-light nab1"
-         style="background-color:rgba(0,0,0,0);box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19);">
-        <a class="navbar-brand a" href="/" style="color:gray">StudentsArea</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link nab" href="#" onclick="pr()">Download</a>
-                </li>
-
-                <li class="nav-item active">
-                    <a class="nav-link nab" href="/resume">RESUME <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nab" href="/cheatsheet">GUIDE</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nab" href="/login">LOGIN</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle nab" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">
-                        Dropdown link
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</div>
-
+{% extends 'base.html' %}
+{% load static %}
+{% block cont%}
 <div class="resume1" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) inset, 0 6px 10px 0 rgba(0, 0, 0, 0.19) inset;" id="rs1">
     <div class="row " id="prt">
         <div class="col-md-4 dd" >
@@ -146,17 +89,8 @@
 
 </div>
 <br>
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-
+{% endblock %}
+{% block scrip %}
 <script>
 <!--var obj = JSON.parse(sessionStorage.user);-->
 <!--document.getElementById('hh1').innerHTML=obj.skl;-->
@@ -186,6 +120,4 @@ document.body.innerHTML=d;
 
 </script>
 
-
-</body>
-</html>
+{% endblock %}

@@ -13,6 +13,8 @@
    {% block cs %} <link rel="stylesheet" href="{% static 'bas.css' %}?{% now 'U' %}">{% endblock %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
      <link rel="icon" type="image/png" href="{% static 'za.png' %}"/>
+     <link rel="stylesheet"  href="{% static 'prism.css' %}?{% now 'U' %}"/>
+
     <title>StudentsArea</title>
 </head>
 <body style="background-color:rgb(240, 240, 240);">
@@ -21,7 +23,7 @@
     <!--navbar-->
     <nav class="navbar  fixed-top navbar-expand-lg navbar-light nab1"
          style="background-color:rgba(0,0,0,0);box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) inset, 0 4px 10px 0 rgba(0, 0, 0, 0.19);">
-        <a class="navbar-brand a" href="/studentPage" style="color:gray">StudentsArea</a>
+        <a class="navbar-brand a" href="/" style="color:gray">StudentsArea</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -29,27 +31,31 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
 
-                <li class="nav-item active">
-                    <a class="nav-link nab" href="/notes">Notes <span class="sr-only">(current)</span></a>
+                 <li class="nav-item active">
+                    <a class="nav-link nab" href="/resume">RESUME <span class="sr-only">(current)</span></a>
                 </li>
                   <li class="nav-item">
-                    <a class="nav-link nab" href="#">Books</a>
+                    <a class="nav-link nab" href="/book">Books</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link nab" href="/cheatsheet">CheatSheets</a>
+                </li>
+                  <li class="nav-item">
                     <a class="nav-link nab" href="/maths">MathsProblem</a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link nab" href="/document">Document</a>
+                    <a class="nav-link nab" href="/login">LOGIN</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle nab" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
-                        Dropdown link
+                        More
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="/document">Documents</a>
+                        <a class="dropdown-item" href="/notes">Notes</a>
+
                     </div>
                 </li>
             </ul>
@@ -71,6 +77,10 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 
 <script src="{% static 'chart.js' %}"></script>
 

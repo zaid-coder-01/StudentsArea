@@ -1,10 +1,175 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+{% block cs %}
+<link rel="stylesheet" href="{% static 'log.css' %}?{% now 'U' %}">
+{% endblock %}
+{% block cont%}
+<div class="text-center" style="margin-top:6rem; ">
+<h2 style="text-shadow: 2px 2px 10px rgba(0,0,0,0.5);"><b>LINEAR EQUATIONS</b></h2>
+</div>
+
+<div class="lineardet container-fluid">
+    <p>A linear equation is an equation that is written for two different variables. This equation will be a linear combination of these two variables, and a constant can be present. Surprisingly, when any linear equation is plotted on a graph, it will necessarily produce a straight line - hence the name: Linear equations. </p>
+</div>
+<div class="linearstep container-fluid">
+<p>A linear equation is an equation that is written for two different variables. This equation will be a linear combination of these two variables, and a constant can be present. Surprisingly, when any linear equation is plotted on a graph, it will necessarily produce a straight line - hence the name: Linear equations. </p>
+</div>
+
+<div class="linearsolver container-fluid pt-4" id="linslv">
+<div class="lintype">
+    <h3 id="hv2">Two Variable</h3>
+    <h3 id="hv3">Three Variable</h3>
+</div>
+    <form method="post" action="{% url 'linear' %}" id="frm">
+{% csrf_token %}
+  <div class="var2">
+      <div class="">
+          <h2 class="ml-4">Variables</h2>
+          <input  type="text" class="vari" name="var1" placeholder="1 variable">
+           <input type="text" class="vari" name="var2"placeholder="2 variable">
+      </div>
+      <div>
+          <h2 class="ml-4">Equations</h2>
+          <input  type="text"  class="vallin" name="eq1" id="e1" placeholder="1 equation">
+           <input type="text" class="valcons" name="c1" id="co1"  placeholder="constant">
+           <input type="text" class="vallin" name="eq2" id="e2" placeholder="2 equation">
+            <input  type="text"  class="valcons" name="c2" id="co2"  placeholder="constant">
+      </div>
+  </div>
+
+    <div class="mt-5">
+        <button type="submit" class="btn calcu" id="sub">Calculate</button>
+    </div>
+
+    </form>
+    <div class="solution" style="font-family: 'Courgette', cursive;" id="sl2">
+        <h1 id="sol" style="font-family: 'Courgette', cursive;"></h1>
+        <h4 id="seq1" class="mt-4"></h4>
+        <h4 id="seq2" class="mt-4"></h4>
+        <h4 id="vall" class="mt-4"></h4>
+    </div>
+
+     <form method="post" action="{% url 'linears' %}" id="frm1">
+{% csrf_token %}
+  <div class="" style="margin-top:3rem;">
+      <div class="">
+          <h2 class="ml-3">Variables</h2>
+          <input  type="text" class="vari" name="var1" placeholder="1 variable">
+           <input type="text" class="vari" name="var2"placeholder="2 variable">
+          <input type="text" class="vari" name="var3"placeholder="2 variable">
+      </div>
+
+      <div>
+          <h2 class="mt-5 ml-3">Equation</h2>
+          <div style="display:flex;justify-content:space-around; align-items:center;">
+              <input  type="text"  class="valli" name="eq1" id="e11" placeholder="1 equation">
+           <input type="text" class="valcons" name="c1" id="co11"  placeholder="constant">
+           <input type="text" class="valli" name="eq2" id="e21" placeholder="2 equation">
+            <input  type="text"  class="valcons" name="c2" id="co21"  placeholder="constant">
+             <input type="text" class="valli" name="eq3" id="e22" placeholder="3 equation">
+            <input  type="text"  class="valcons" name="c3" id="co22"  placeholder="constant">
+
+          </div>
+
+      </div>
+  </div>
+
+    <div class="mt-5">
+        <button type="submit" class="btn calcu" id="sub1">Calculate</button>
+    </div>
+
+    </form>
+    <div class="solution" style="font-family: 'Courgette', cursive;" id="sl3">
+        <h1 id="sol1" style="font-family: 'Courgette', cursive;"></h1>
+        <h4 id="seq11" class="mt-4"></h4>
+        <h4 id="seq21" class="mt-4"></h4>
+        <h4 id="seq22" class="mt-4"></h4>
+        <h4 id="vall1" class="mt-4"></h4>
+    </div>
+</div>
+<br>
+{% endblock %}
+
+{% block scrip %}
+<script>
+
+$(document).ready(function(){
+$('#hv2').css('border-bottom','3px solid black');
+$('#frm1').hide();
+$('#hv2').on('click',()=>{
+$('#linslv').css('height','65vh');
+$('#hv2').css('border-bottom','3px solid black');
+$('#hv3').css('border-bottom','none');
+$('#sl3').hide();
+$('#frm1').hide();
+$('#frm').show();
+});
+$('#hv3').on('click',()=>{
+$('#hv3').css('border-bottom','3px solid black');
+$('#hv2').css('border-bottom','none');
+$('#linslv').css('height','79vh');
+$('#sl2').hide();
+$('#frm1').show();
+$('#frm').hide();
+});
+
+$('#frm').on("submit",(e)=>{
+e.preventDefault();
+let data=new FormData($('#frm')[0]);
+
+$.ajax({
+url:'{% url 'linear' %}',
+method:'POST',
+data:data,
+
+success:(data)=>{
+$('#linslv').css('height','100%');
+$('#sol').text("Solution");
+$('#seq1').text($('#e1').val()+" = "+$('#co1').val());
+$('#seq2').text($('#e2').val()+" = "+$('#co2').val());
+$('#vall').text("Answer:- "+" "+data);
+
+},
+error:(error)=>{
+console.log(error);
+},
+processData: false,
+contentType: false
+});
+
+});
+
+$('#frm1').on("submit",(e)=>{
+e.preventDefault();
+let data=new FormData($('#frm1')[0]);
+
+$.ajax({
+url:'{% url 'linears' %}',
+method:'POST',
+data:data,
+
+success:(data)=>{
+$('#linslv').css('height','53rem');
+$('#sol1').text("Solution");
+$('#seq11').text($('#e11').val()+" = "+$('#co11').val());
+$('#seq21').text($('#e21').val()+" = "+$('#co21').val());
+$('#seq22').text($('#e22').val()+" = "+$('#co22').val());
+$('#vall1').text("Answer:- "+" "+data);
+
+},
+error:(error)=>{
+console.log(error);
+},
+processData: false,
+contentType: false
+});
+
+});
+
+
+});
+
+
+</script>
+
+{% endblock %}

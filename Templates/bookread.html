@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+{% block cs %}
+<link rel="stylesheet" href="{% static 'log.css' %}?{% now 'U' %}">
+{% endblock %}
+{% block cont%}
+<div style="margin-top:6rem; background-color:white;">
+     <iframe src="{% static 'maths1.pdf' %}" style="min-height:100vh;width:80vw; background-color:white!important; margin-left:7rem;" frameborder="0"  allowtransparency = "true"></iframe>
+</div>
+
+
+{% endblock %}

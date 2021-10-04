@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Great+Vibes&display=swap');
 html{
 height:100vh;
 }
@@ -186,6 +186,7 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 0 rgba(0, 0, 0, 0.19);
 
 .rtem:hover img{
 transform: scale(1.1);
+border:1px solid black;
 }
 .crdimg{
 width:300px;
@@ -233,4 +234,120 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)inset, 0 8px 20px 0 rgba(0, 0, 0, 0.19
 .actn i:hover{
 cursor:pointer;
 color:blue;
+}
+
+.books{
+margin-top:5rem;
+}
+.bookdes{
+max-width:13rem;
+height:18rem;
+border:none;
+}
+.bookdes img{
+max-width:13rem;
+max-height:15rem;
+box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.2)inset, 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.bookdes img:hover{
+transform:scale(1.1);
+border:1px solid black;
+}
+.rdbook{
+background-color:white;
+width:80vw; height:100vh;
+margin-top:1rem;
+margin-left:8rem;
+}
+.lineardet{
+margin-top:3rem;
+font-size:1.2rem;
+width:95vw;
+}
+.linearstep{
+margin-top:3rem;
+font-size:1.2rem;
+width:95vw;
+}
+.linearsolver{
+background:white;
+margin-top:3rem;
+font-size:1.2rem;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+height:65vh;
+width:95vw;
+}
+.lintype{
+display:flex;
+justify-content:space-around;
+align-items:center;
+cursor:pointer;
+}
+.lintype h3{
+text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+padding-bottom:0.3rem;
+}
+
+.lintype h3:hover{
+transform:scale(1.1);
+transition:all 0.2s linear;
+}
+.vari{
+width:8rem;
+margin-left:1rem;
+margin-top:1rem;
+font-size:1.2rem;
+padding-left:0.3rem;
+border-radius:0.3rem;
+}
+.var2{
+display:flex;
+justify-content:space-around;
+margin-top:6rem;
+}
+
+.vallin{
+margin-top:1rem;
+width:17rem;
+margin-left:2rem;
+font-size:1.2rem;
+padding-left:0.3rem;
+border-radius:0.3rem;
+}
+.valcons{
+margin-top:1rem;
+width:6rem;
+margin-left:1rem;
+font-size:1.2rem;
+padding-left:0.3rem;
+border-radius:0.3rem;
+
+}
+.valli{
+margin-top:1rem;
+width:17rem;
+margin-left:1rem;
+font-size:1.2rem;
+padding-left:0.3rem;
+border-radius:0.3rem;
+}
+
+.vallin:focus{
+outline-style: ridge;
+}
+.calcu{
+background-color:rgba(0,255,0,0.7);
+border-radius:2rem;
+font-size:1.3rem;
+padding0.3rem;
+width:15rem;
+float:right;
+font-weight:bold;
+margin-right:1rem;
+}
+.calcu:hover{
+transform:scale(1.1);
+}
+.solution{
+margin-top:7rem;
 }

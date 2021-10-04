@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block cs %}
+<link rel="stylesheet" href="{% static 'log.css' %}?{% now 'U' %}">
+{% endblock %}
+{% block cont%}
+<div class="books container">
+<div class="row">
+        <div class="col-md-12 mt-4">
+            <div class="text-center">
+                <h2 style="text-shadow: 2px 2px 10px rgba(0,0,0,0.5);"><b>Books</b></h2>
+            </div>
+
+            <div class="card-columns mt-5">
+                <div class="card bookdes" style="background-color:rgba(0,0,0,0);max-width:13rem;">
+                    <a href="{% url 'bookread' %}"><img src="{% static 'txtimg.jpg' %}" class="crdimg"></a>
+                     <h5 class="mt-4" style="text-shadow: 2px 2px 10px rgba(0,0,0,0.5);">kdejfkj</h5>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+{% endblock %}

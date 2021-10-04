@@ -31,6 +31,10 @@ urlpatterns = [
     path('notes/', views.note),
     path('document/', views.document),
     path('datavisu/', views.datavisu),
+    path('linear/', views.linear,name="linear"),
+    path('linears/', views.linears, name="linears"),
+    path('book/', views.book,name="book"),
+    path('bookread/', views.books, name="bookread"),
     path('templatedesign/', views.tempdesign,name="tempdesign"),
     path('resumeTemplate/', views.resumeTemplate,name="resumeTemplate"),
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
