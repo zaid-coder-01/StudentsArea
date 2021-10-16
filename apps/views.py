@@ -1,7 +1,10 @@
-from django.http import JsonResponse
+import json
+
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render
 import requests
 import sympy as sp
+import numpy as np
 
 # Create your views here.
 from sympy import sympify, parse_expr
@@ -11,6 +14,9 @@ from apps.models import Facts, Document
 
 def index(request):
     facts = Facts.objects.all()
+    facts = list(facts)
+    np.random.shuffle(facts)
+
     return render(request, "index.html", {"facts": facts})
 
 
@@ -39,14 +45,14 @@ def linear(request):
         print(eq2)
         print(v3)
         x, y = sp.symbols(v3)
-        eq1 = sympify(eq1, evaluate=False, )
+        eq1 = sympify(eq1, evaluate=False)
         eq2 = sympify(eq2, evaluate=False)
         print(eq1)
         print(eq2)
         eq1 = sp.Eq(eq1, int(c1))
         eq2 = sp.Eq(eq2, int(c2))
         v = sp.solve((eq1, eq2), (x, y))
-        v=str(v)
+        v = str(v)
         return JsonResponse(v, safe=False)
     return render(request, "linear.html")
 
@@ -62,11 +68,11 @@ def linears(request):
         c1 = request.POST['c1']
         c2 = request.POST['c2']
         c3 = request.POST['c3']
-        v3 = str(v1) + "," + str(v2)+ "," + str(v3)
+        v3 = str(v1) + "," + str(v2) + "," + str(v3)
         print(eq1)
         print(eq2)
         print(v3)
-        x, y , z = sp.symbols(v3)
+        x, y, z = sp.symbols(v3)
         eq1 = sympify(eq1, evaluate=False)
         eq2 = sympify(eq2, evaluate=False)
         eq3 = sympify(eq3, evaluate=False)
@@ -75,7 +81,7 @@ def linears(request):
         eq1 = sp.Eq(eq1, int(c1))
         eq2 = sp.Eq(eq2, int(c2))
         eq3 = sp.Eq(eq3, int(c3))
-        v = sp.solve((eq1, eq2,eq3), (x, y, z))
+        v = sp.solve((eq1, eq2, eq3), (x, y, z))
         v = str(v)
         return JsonResponse(v, safe=False)
 
@@ -121,3 +127,45 @@ def tempdesign(request):
 
 def resumeTemplate(request):
     return render(request, "resumeTemplate.html")
+
+
+def matrix(request):
+    return render(request, "matrix.html")
+
+
+def matrixs(request):
+    if request.method == 'POST':
+        r = request.POST["row"]
+        c = request.POST["col"]
+        m1 = request.POST["matA"]
+        m2 = request.POST["matB"]
+
+        a = []
+        b = []
+        for i in m1.split(','):
+            a.append(int(i))
+
+        for i in m2.split(','):
+            b.append(int(i))
+
+        a = np.array(a)
+        b = np.array(b)
+        a = a.reshape(int(r), int(c))
+        b = b.reshape(int(r), int(c))
+        ans = np.add(a, b)
+        context = {
+            "matA": a,
+            "matB": b,
+            "ans": ans
+        }
+
+        data = json.dumps(context, indent=4, sort_keys=True, default=str)
+        return HttpResponse(data, content_type='application/json')
+
+
+def science(request):
+    return render(request, "science/science.html")
+
+
+def humrespi(request):
+    return render(request, "science/humrespi.html")

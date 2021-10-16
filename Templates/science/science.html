@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block cs %}
+<link rel="stylesheet" href="{% static 'bas.css' %}?{% now 'U' %}">
+{% endblock %}
+{% block cont%}
+
+<div class="container mt-5">
+    <div class="text-center sctype">
+        <h2 class="hdg" id="biolgy">BIOLOGY</h2>
+        <h2 class="hdg" id="phys">PHYSIC</h2>
+        <h2 class="hdg" id="chemis">CHEMISTRY</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-12 sci"
+             style="box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);">
+
+            <div id="bio">
+                <div class="mt-5" style="display:flex; justify-content:space-around;">
+                    <a href="/humrespi" class="btn sbtn">HUMAN DIGESTIVE SYSTEM</a>
+                    <a href="#" class="btn sbtn">HUMAN HEART</a>
+                    <a href="#" class="btn sbtn">HUMAN KIDNEY</a>
+                    <a href="#" class="btn sbtn">HUMAN BRAIN</a>
+                    <a href="/matrix" class="btn sbtn">MENSURATION CYCLE</a>
+
+                </div>
+                <div class="mt-5" style="display:flex; justify-content:space-around;">
+                    <a href="#" class=" btn sbtn">HUMAN HEALTH AND DISEASE</a>
+                    <a href="#" class=" btn sbtn">REPRODUCTION IN HUMANS</a>
+                    <a href="/datavisu" class=" btn sbtn">AGRICULTURE</a>
+                    <a href="#" class="btn sbtn"> ECOSYSTEM </a>
+                    <!--                <a href="#"  class=" btn sbtn"> PHOTOSYNTHESIS</a>-->
+
+                </div>
+                <div class="mt-5" style="display:flex; justify-content:space-around;">
+                    <a href="#" class=" btn sbtn"> PHOTOSYNTHESIS</a>
+                    <a href="#" class=" btn sbtn">REPRODUCTION IN PLANTS</a><a href="#" class=" btn sbtn">
+                    PHOTOSYNTHESIS</a>
+                    <a href="#" class=" btn sbtn">REPRODUCTION IN HUMAN</a>
+                </div>
+            </div>
+
+            <!--            physic-->
+            <div id="physic">
+                <div class="mt-5" style="display:flex; justify-content:space-around;">
+                    <a href="/linear" class="btn sbtn">gaus</a>
+                    <a href="#" class="btn sbtn">HUMAN HEART</a>
+                    <a href="#" class="btn sbtn">HUMAN KIDNEY</a>
+                    <a href="#" class="btn sbtn">HUMAN BRAIN</a>
+                    <a href="/matrix" class="btn sbtn">MENSURATION CYCLE</a>
+
+                </div>
+                <div class="mt-5" style="display:flex; justify-content:space-around;">
+                    <a href="#" class=" btn sbtn">HUMAN HEALTH AND DISEASE</a>
+                    <a href="#" class=" btn sbtn">REPRODUCTION IN HUMANS</a>
+                    <a href="/datavisu" class=" btn sbtn">AGRICULTURE</a>
+                    <a href="#" class="btn sbtn"> ECOSYSTEM </a>
+                    <!--                <a href="#"  class=" btn sbtn"> PHOTOSYNTHESIS</a>-->
+
+                </div>
+                <div class="mt-5" style="display:flex; justify-content:space-around;">
+                    <a href="#" class=" btn sbtn"> PHOTOSYNTHESIS</a>
+                    <a href="#" class=" btn sbtn">REPRODUCTION IN PLANTS</a><a href="#" class=" btn sbtn">
+                    PHOTOSYNTHESIS</a>
+                    <a href="#" class=" btn sbtn">REPRODUCTION IN HUMAN</a>
+                </div>
+            </div>
+            <!--               end physic-->
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scrip %}
+<script>
+
+$(document).ready(function(){
+$('#biolgy').css('border-bottom',"2px solid blue");
+$('#physic').hide();
+$('#phys').click(()=>{
+$('#biolgy').css('border-bottom',"none");
+$('#phys').css('border-bottom',"2px solid blue");
+$('#physic').show();
+$('#bio').hide();
+});
+$('#biolgy').click(()=>{
+$('#phys').css('border-bottom',"none");
+$('#biolgy').css('border-bottom',"2px solid blue");
+$('#physic').hide();
+$('#bio').show();
+});
+});
+</script>
+{% endblock %}

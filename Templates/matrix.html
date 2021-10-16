@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block cs %}
+<link rel="stylesheet" href="{% static 'bas.css' %}?{% now 'U' %}">
+{% endblock %}
+{% block cont%}
+<div class="text-center" style="margin-top:6rem; ">
+<h2 style="text-shadow: 2px 2px 10px rgba(0,0,0,0.5);"><b>MATRIX</b></h2>
+</div>
+
+<div class="matrixdet container-fluid">
+    <p id="sp1">In mathematics, a matrix (plural matrices) is a rectangular array of numbers, symbols, or expressions, arranged in rows and columns. Matrices are commonly written in box brackets. The horizontal and vertical lines of entries in a matrix are called rows and columns, respectively. The size of a matrix is defined by the number of rows and columns that it contains. A matrix with m rows and n columns is called an m × n matrix
+ where m and n are called its dimensions </p>
+</div>
+<div class="matrixstep container-fluid">
+<p>A linear equation is an equation that is written for two different variables. This equation will be a linear combination of these two variables, and a constant can be present. Surprisingly, when any linear equation is plotted on a graph, it will necessarily produce a straight line - hence the name: Linear equations. </p>
+</div>
+
+<div class="matrixsolver container-fluid pt-4" id="matslv">
+<div class="mattype">
+    <h3 id="hv1">Sum</h3>
+    <h3 id="hv2">Divide</h3>
+    <h3 id="hv3">Dot Product</h3>
+    <h3 id="hv4">Inner Product</h3>
+    <h3 id="hv5">Inverse</h3>
+    <h3 id="hv6">Rank</h3>
+    <h3 id="hv7">Eigen Value</h3>
+    <h3 id="hv8">Eigen Vector</h3>
+</div>
+    <div class="addmat">
+        <form id="frm" method="post" action="{% url 'matrixs' %}">
+        {% csrf_token %}
+            <div class="mt-5 container"><span style="font-weight:bold;">No of Rows and Column : - </span><input type="text" name="row" placeholder="no rows">&nbsp; <b> X </b> &nbsp;<input type="text"  name="col" placeholder="no columns">
+        </div>
+          <div class="mt-4 matval container">
+     <span style="font-weight:bold;">Matrix A = </span><input type="text" name="matA" placeholder="Matrix 1" style="  letter-spacing: 3px;" > <br>
+      <span style="font-weight:bold;">Matrix B = </span><input type="text" name="matB" placeholder="Matrix 2" style="  letter-spacing: 3px;"> <br>
+    </div>
+            <div class="mt-5">
+                <button type="submit" class="matbut" style="float:right">Calculate</button>
+            </div>
+            </form>
+
+        <div class="" style="margin-top:7rem; font-family: 'Courgette', cursive;">
+            <h1 id="sol"></h1>
+            <h5 id="eq" style="margin-top:2rem;"></h5>
+            <h4 id="ans" style="margin-top:2rem;"></h4>
+            <h6 id="exam"></h6>
+        </div>
+    </div>
+
+
+</div>
+<br>
+{% endblock %}
+
+
+{% block scrip %}
+<script>
+
+$(document).ready(function(){
+$('#hv1').css('border-bottom','2px solid black');
+$('#frm').on("submit",(e)=>{
+e.preventDefault();
+let data=new FormData($('#frm')[0]);
+
+$.ajax({
+url:'{% url 'matrixs' %}',
+method:'POST',
+data:data,
+
+success:(data)=>{
+$('#matslv').css('height','100%');
+$('#sol').text("Solution");
+const pl='+';
+let p=pl.bold();
+
+$('#eq').text(`Matrix A = ${data.matA} \u00A0\u00A0\ + \u00A0\u00A0\ Matrix B= ${data.matB}`);
+$('#ans').text(`Ans :- ${data.ans}`).css('font-weight',"bold");
+$('#exam').text('');
+
+},
+error:(error)=>{
+console.log(error);
+},
+processData: false,
+contentType: false
+});
+
+});
+
+
+});
+</script>
+
+
+{% endblock %}

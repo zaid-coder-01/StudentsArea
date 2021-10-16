@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Great+Vibes&display=swap');
 html{
 height:100vh;
 }
@@ -272,4 +272,90 @@ transform: scale(1.1);
 .cheatContainer{
 height:100%;
 width:70vw;
+}
+.matrixdet{
+margin-top:3rem;
+font-size:1.2rem;
+width:95vw;
+}
+.matrixstep{
+margin-top:3rem;
+font-size:1.2rem;
+width:95vw;
+}
+.matrixsolver{
+background:white;
+margin-top:3rem;
+font-size:1.2rem;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+height:65vh;
+width:95vw;
+}
+.mattype{
+display:flex;
+justify-content:space-around;
+}
+.mattype h3{
+text-shadow:2px 2px 10px rgba(0,0,0,0.4);
+padding-bottom:0.2rem;
+}
+.mattype h3:hover{
+transform:scale(1.1);
+transition:all 0.2s linear;
+cursor:pointer;
+}
+.matval input{
+width:50rem;
+padding:0.3rem;
+margin-left:1rem;
+margin-top:1rem;
+}
+.matbut{
+width:15rem;
+background:rgba(0,255,0,0.9);
+border-radius:2rem;
+font-size:1.3rem;
+padding:0.4rem;
+font-weight:bold;
+margin-right:1rem;
+}
+.matbut:hover{
+transform:scale(1.1);
+}
+.sbtn{
+color:black;
+border-radius:1rem;
+background:linear-gradient(to right,rgba(234,254,95,0.5),rgba(197,133,175,0.6));
+font-size:1.2rem;
+border:1px solid blue;
+padding:0.6rem;
+box-shadow: 8px 10px 11px 0 rgba(0, 0, 0, 0.2)inset, 12px 10px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.sbtn:hover{
+transition:all linear 1s;
+font-weight:bold;
+ transform: scale(1.2);
+ background-color:lightgoldenrodyellow;
+ color:black;
+ border-color:blue;
+}
+.hdg{
+padding-top:4rem;
+text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+
+}
+.sci{
+margin-top:2rem;
+height:20rem;
+}
+.sctype{
+display:flex; justify-content:space-around;
+}
+.sctype:hover{
+cursor:pointer;
+}
+.spkbtn{
+border-radius:2rem; background-color:floralwhite;
+ font-size:1.2rem;padding:0.2rem;width:7rem;
+ font-weight:bold;
 }
